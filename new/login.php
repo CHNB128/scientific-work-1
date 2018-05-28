@@ -1,23 +1,22 @@
 <?php
 require_once('connection.php');
 
-echo 'logn: login start';
+printf("logn: login start\r\n");
 
-// $query = '
-//   SELECT type_id
-//   FROM users
-// 	WHERE login=$_POST['login']
-// 	AND	password=$_POST['password']
-//   LIMIT 1
-// ';
+$query = sprintf(
+  "SELECT type, login FROM users WHERE login='%s' AND password='%s' LIMIT 1",
+  $_POST['login'],
+  $_POST['password']
+);
 
-echo 'logn: make request';
+printf("logn: make request\r\n");
 
-$user_data = $mysqli->query($query)->fetch_assoc();
+printf($query);
 
-if($user_data) {
+if($user_data = $mysqli->query($query)) {
+  $user_data = $user_data->fetch_assoc();
   session_start();
-  echo 'logn: start session';
+  printf("logn: start session\r\n");
   $_SESSION['login'] = $user_data['login'];
   $_SESSION['type'] = $user_data['type'];
   switch ($user_data['type']) {
@@ -32,6 +31,7 @@ if($user_data) {
       break;    
   }
 } else {
-  echo 'logn: user not found';
+  printf("logn: user not found\r\n");
+  printf($mysqli->error);
   header("Location: /index.php");
 }
