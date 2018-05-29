@@ -12,7 +12,7 @@
   <nav>
     <a class="button" href="javascript:history.back()">назад</a> 
   </nav>
-  <form action="">
+  <form action="../user/create.php" method="post">
     <label for="login">логин</label>
     <input type="text" name="login">
     <label for="password">пароль</label>
