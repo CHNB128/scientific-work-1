@@ -21,13 +21,13 @@ if($user_data = $mysqli->query($query)) {
   $_SESSION['type'] = $user_data['type'];
   switch ($user_data['type']) {
     case 'admin':
-      header("Location: /admin.php");
+      header("Location: /admin/index.php");
       break;
     case 'student':
-      header("Location: /student.php");
+      header("Location: /student/index.php");
       break;
     case 'teacher':
-      header("Location: /teacher.php");
+      header("Location: /teacher/index.php");
       break;    
   }
 } else {

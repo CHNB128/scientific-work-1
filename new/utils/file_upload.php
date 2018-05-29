@@ -1,6 +1,7 @@
 <?php
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-require_once "$root/file/meta.php";/*
+define("MAX_FILE_SIZE", 500000);
+/*
 *	Данные формы:
 *
 *	method: post
