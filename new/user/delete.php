@@ -2,10 +2,12 @@
 require_once('../connection.php');
 
 $query = sprintf(
-  "DELETE FROM users WHERE login = '%s')",
-  $_POST['login']
+  "DELETE FROM users WHERE id = '%s')",
+  $_POST['id']
 );
 
-$mysqli->query($query);
-
-header("Location: /admin/index.php");
+if($mysqli->query($query) === TRUE) {
+  header("Location: /admin/index.php");
+} else {
+  echo $mysqli->error;
+}

@@ -9,16 +9,10 @@ define("DB_PASSWORD", "admin123");
 define("DB_NAME", 		"settkz_uch");
 define("DB_CHARSET", 	"utf8");
 
-printf("conn: setup params\r\n");
-
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-
-printf("conn: connect to database\r\n");
 
 if ($mysqli->connect_error) {
   die("conn: connection failed: " . $mysqli->connect_error);
 }
-
-printf("conn: select charset\r\n");
 
 $mysqli->set_charset(DB_CHARSET);

@@ -10,8 +10,14 @@
 </head>
 <body>
   <form method="post" action="login.php">
-    <input type="text" name="login">
-    <input type="password" name="password">
+    <div>
+      <label for="login">логин</label>
+      <input type="text" name="login">
+    </div>
+    <div>
+      <label for="password">Пароль</label>
+      <input type="password" name="password">
+    </div>
     <button type="submit">войти</button>
   </form>
 </body>

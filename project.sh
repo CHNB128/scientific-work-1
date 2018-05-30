@@ -1,8 +1,10 @@
 #!/bin/bash
 case $1 in
   "zip")
-    zip -r new new/*
-    zip -r old old/*
+    cd new
+    zip -r ../new *
+    cd ../old 
+    zip -r ../old *
   ;;
   "clean")
     rm *.zip

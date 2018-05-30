@@ -17,6 +17,7 @@ if($user_data = $mysqli->query($query)) {
   $user_data = $user_data->fetch_assoc();
   session_start();
   printf("logn: start session\r\n");
+  $_SESSION['id'] = $user_data['id'];
   $_SESSION['login'] = $user_data['login'];
   $_SESSION['type'] = $user_data['type'];
   switch ($user_data['type']) {

@@ -18,8 +18,8 @@
     require_once('../utils/query.php');
     tabled_query(
       $mysqli,
-      ["номер", "логин", "статус"],
-      "SELECT id, login, type FROM users WHERE id != 1 ORDER BY id"
+      ["номер", "логин", "имя", "статус"],
+      "SELECT id, login, full_name, type FROM users WHERE id != 1 ORDER BY id"
     );
   ?>
   </div>
