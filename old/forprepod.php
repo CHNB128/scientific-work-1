@@ -8,7 +8,7 @@
     while ($row2 = $result2->fetch_assoc()) {
         $ych = $row2['fio'];
     }
-    require_once "connection.php";
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]); require "$root/connection/index.php";
     if ($_FILES && $_FILES['file']['error']== UPLOAD_ERR_OK)
     {
         $name = $_FILES['file']['name'];

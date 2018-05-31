@@ -2,7 +2,7 @@
 <?php
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
-    require_once "connection.php";
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]); require "$root/connection/index.php";
     session_start();
     $result5 = $mysqli->query("SELECT * FROM users WHERE login='" . $_SESSION['login'] . "'");
 	while ($row5 = $result5->fetch_assoc()) {
@@ -51,7 +51,7 @@
         <?php
 //            ini_set('display_errors', 1);
 //            error_reporting(E_ALL);
-//            require_once "connection.php";
+//            $root = realpath($_SERVER["DOCUMENT_ROOT"]); require "$root/connection/index.php";
 //            $result = $mysqli->query("SELECT * FROM users");
 //            while ($row = $result->fetch_assoc()) {
 //                echo "<tr>";
@@ -70,7 +70,7 @@
         <?php
             ini_set('display_errors', 1);
             error_reporting(E_ALL);
-            require_once "connection.php";
+            $root = realpath($_SERVER["DOCUMENT_ROOT"]); require "$root/connection/index.php";
             $result = $mysqli->query("SELECT * FROM users");
             while ($row = $result->fetch_assoc()) {
                 if ($row['type'] != 0) {

@@ -1,7 +1,7 @@
 <?php
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
-    require_once "connection.php";
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]); require "$root/connection/index.php";
     $a = $mysqli->prepare("INSERT INTO zanyatie (id, ych, prepod, prim) VALUE (?, ?, ?, ?)");
     $a->bind_param("ssss", $id, $_POST['ych'], $_POST['prepod'], $_POST['prim']);
     $id = "1";

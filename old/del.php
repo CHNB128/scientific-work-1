@@ -1,7 +1,7 @@
 <?php
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
-    require_once "connection.php";
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]); require "$root/connection/index.php";
     $a = "DELETE FROM users WHERE login='" . $_POST['login'] . "'";
 	$mysqli->query($a) or die(mysql_error());
 
